@@ -10,7 +10,7 @@ class Memory {
     private:
         array<uint8_t, 4 * 1024> ram{};
 
-        bool isValidAddress(uint16_t address); // 0x000 até 0xFFF
+        bool isValidAddress(uint16_t address) const; // 0x000 até 0xFFF
 
     public:
 
@@ -19,7 +19,7 @@ class Memory {
 
         void load(uint16_t initialAddress, const vector<uint8_t> &programBytes);
 
-        uint8_t read(uint16_t address);
+        uint8_t read(uint16_t address) const;
         void write(uint16_t address, uint8_t value);
 
 };
