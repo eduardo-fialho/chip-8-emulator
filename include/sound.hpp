@@ -2,6 +2,8 @@
 
 #include <cstdint>
 
+using namespace std;
+
 class Sound {
     private:
         
