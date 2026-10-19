@@ -21,10 +21,13 @@ class Decoder {
         void executeLogic(uint16_t instruction);
         void executeCompare(uint16_t instruction);
         void executeGraphic(uint16_t instruction);
-        void executeInput(uint16_t instruction);
+        bool executeInput(uint16_t instruction);
         void executeTemporizer(uint16_t instruction);
 
-        bool isValidInstruction(uint16_t instruction);
+        uint16_t extractData(uint16_t instruction, uint8_t num_nibbles);
+        uint8_t extractXIndex(uint16_t instruction);
+        uint8_t extractYIndex(uint16_t instruction);
+        uint8_t extractFirstDigit(uint16_t instruction);
 
     public:
 

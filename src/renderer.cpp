@@ -12,8 +12,6 @@ const array<array<bool, 64>, 32>& Renderer::getFramebuffer() const {
 
 bool Renderer::draw(uint8_t x, uint8_t y, const vector<uint8_t> &sprite) {
 
-    if(x > 63 || y > 31) throw out_of_range("Invalid coordenates");
-
     unsigned int height = sprite.size();
     bool collision = false;
     unsigned int s = 0;

@@ -55,10 +55,12 @@ void CPU::setV(uint8_t index, uint8_t value) {
 }
         
 void CPU::setI(uint16_t value) {
+    if(value > 0xFFF) throw out_of_range("Invalid value for I");
     I = value;
 }
         
 void CPU::setPC(uint16_t value) {
+    if(value > 0xFFE) throw out_of_range("Invalid value for PC");
     PC = value;
 }
         
