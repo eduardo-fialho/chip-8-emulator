@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-#define TEMPORIZER_CLOCK 60 // 60Hz
+#define REGISTER_CLOCK 60 // 60Hz
 
 using namespace std;
 
