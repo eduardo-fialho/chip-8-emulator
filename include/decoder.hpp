@@ -30,5 +30,5 @@ class Decoder {
 
         Decoder(CPU* cpu, Memory* memory, Renderer* renderer, Input* input);
 
-        void execute(uint16_t instruction);
+        bool execute(uint16_t instruction); // False significa que a instrução está aguardando uma tecla
 };

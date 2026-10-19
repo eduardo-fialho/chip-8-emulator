@@ -14,7 +14,7 @@ using namespace std;
 class CPU {
     private:
 
-        array<uint8_t, 16> V;
+        array<uint8_t, 16> V{};
         uint16_t I = 0;
         uint16_t PC = 0x200;
         uint8_t DT = 0;
@@ -26,7 +26,7 @@ class CPU {
         Memory* memory;
 
         uint16_t concatenateBytes(uint8_t high, uint8_t low);
-        bool isValidVRegister(uint16_t index) const;
+        bool isValidVRegister(uint8_t index) const;
 
     public:
 
@@ -39,13 +39,13 @@ class CPU {
         void step(); // O PC é atualizado aqui
         void updateTemporizerRegisters();
 
-        void setV(uint16_t index, uint8_t value);
+        void setV(uint8_t index, uint8_t value);
         void setI(uint16_t value);
         void setPC(uint16_t value);
         void setDT(uint8_t value);
         void setST(uint8_t value);
 
-        uint8_t getV(uint16_t index) const;
+        uint8_t getV(uint8_t index) const;
         uint16_t getI() const;
         uint16_t getPC() const;
         uint8_t getDT() const;
