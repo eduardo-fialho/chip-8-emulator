@@ -4,6 +4,13 @@
 #include <stdexcept>
 #include <random>
 
+Decoder::Decoder(CPU* cpu, Memory* memory, Renderer* renderer, Input* input) {
+    this->cpu = cpu;
+    this->memory = memory;
+    this->renderer = renderer;
+    this->input = input;
+}
+
 uint16_t Decoder::extractData(uint16_t instruction, uint8_t num_nibbles) {
     if(num_nibbles > 3 || num_nibbles == 0) 
         throw invalid_argument("Number of nibbles must be 1 to 3");
